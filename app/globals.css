@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --chief-black: #080810;
+  --chief-deep: #0F0F1A;
+  --chief-gold: #C9A96E;
+  --chief-gold-light: #E8C98A;
+  --chief-mist: #A8A8B8;
+  --chief-white: #F4F0E8;
+  --chief-surface: #13131F;
+  --chief-border: rgba(201, 169, 110, 0.15);
+}
+
+@theme inline {
+  --color-chief-black: #080810;
+  --color-chief-deep: #0F0F1A;
+  --color-chief-gold: #C9A96E;
+  --color-chief-gold-light: #E8C98A;
+  --color-chief-mist: #A8A8B8;
+  --color-chief-white: #F4F0E8;
+  --color-chief-surface: #13131F;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--chief-black);
+  color: var(--chief-white);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Subtle grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--chief-black); }
+::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.25); border-radius: 2px; }
