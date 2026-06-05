@@ -26,13 +26,13 @@ export default function Nav() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-[#080810]/90 backdrop-blur-md border-b border-[rgba(201,169,110,0.1)]"
+          ? "bg-[#FAFAF8]/90 backdrop-blur-md border-b border-[rgba(155,120,64,0.15)]"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="font-display text-xl font-light tracking-[0.12em] text-[#F4F0E8] hover:text-[#C9A96E] transition-colors duration-300">
+        <a href="#" className="font-display text-xl font-light tracking-[0.12em] text-[#1A1820] hover:text-[#9B7840] transition-colors duration-300">
           Orgchief
         </a>
 
@@ -42,7 +42,7 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] tracking-[0.06em] text-[#A8A8B8] hover:text-[#C9A96E] transition-colors duration-300 uppercase font-light"
+              className="text-[13px] tracking-[0.06em] text-[#6B6879] hover:text-[#9B7840] transition-colors duration-300 uppercase font-light"
             >
               {link.label}
             </a>
@@ -53,7 +53,7 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center px-5 py-2 text-[12px] tracking-[0.1em] uppercase font-medium border border-[rgba(201,169,110,0.4)] text-[#C9A96E] hover:bg-[rgba(201,169,110,0.08)] hover:border-[#C9A96E] transition-all duration-300"
+            className="hidden md:inline-flex items-center px-5 py-2 text-[12px] tracking-[0.1em] uppercase font-medium border border-[rgba(155,120,64,0.4)] text-[#9B7840] hover:bg-[rgba(155,120,64,0.08)] hover:border-[#9B7840] transition-all duration-300"
           >
             Book a Discovery Call
           </a>
@@ -64,9 +64,9 @@ export default function Nav() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-5 h-px bg-[#A8A8B8] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
-            <span className={`block w-5 h-px bg-[#A8A8B8] transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-5 h-px bg-[#A8A8B8] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+            <span className={`block w-5 h-px bg-[#6B6879] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+            <span className={`block w-5 h-px bg-[#6B6879] transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-5 h-px bg-[#6B6879] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
           </button>
         </div>
       </nav>
@@ -79,7 +79,7 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#0F0F1A] border-t border-[rgba(201,169,110,0.1)] overflow-hidden"
+            className="md:hidden bg-[#F2EFEA] border-t border-[rgba(155,120,64,0.12)] overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-6">
               {links.map((link) => (
@@ -87,7 +87,7 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-sm tracking-[0.06em] text-[#A8A8B8] hover:text-[#C9A96E] transition-colors duration-300 uppercase"
+                  className="text-sm tracking-[0.06em] text-[#6B6879] hover:text-[#9B7840] transition-colors duration-300 uppercase"
                 >
                   {link.label}
                 </a>
@@ -95,7 +95,7 @@ export default function Nav() {
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="inline-flex items-center justify-center px-5 py-3 text-[12px] tracking-[0.1em] uppercase font-medium border border-[rgba(201,169,110,0.4)] text-[#C9A96E] hover:bg-[rgba(201,169,110,0.08)] transition-all duration-300"
+                className="inline-flex items-center justify-center px-5 py-3 text-[12px] tracking-[0.1em] uppercase font-medium border border-[rgba(155,120,64,0.4)] text-[#9B7840] hover:bg-[rgba(155,120,64,0.08)] transition-all duration-300"
               >
                 Book a Discovery Call
               </a>

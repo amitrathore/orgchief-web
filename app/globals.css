@@ -2,24 +2,24 @@
 @import "tailwindcss";
 
 :root {
-  --chief-black: #080810;
-  --chief-deep: #0F0F1A;
-  --chief-gold: #C9A96E;
-  --chief-gold-light: #E8C98A;
-  --chief-mist: #A8A8B8;
-  --chief-white: #F4F0E8;
-  --chief-surface: #13131F;
-  --chief-border: rgba(201, 169, 110, 0.15);
+  --chief-black: #FAFAF8;
+  --chief-deep: #F2EFEA;
+  --chief-gold: #9B7840;
+  --chief-gold-light: #C9A96E;
+  --chief-mist: #6B6879;
+  --chief-white: #1A1820;
+  --chief-surface: #EDE9E2;
+  --chief-border: rgba(155, 120, 64, 0.2);
 }
 
 @theme inline {
-  --color-chief-black: #080810;
-  --color-chief-deep: #0F0F1A;
-  --color-chief-gold: #C9A96E;
-  --color-chief-gold-light: #E8C98A;
-  --color-chief-mist: #A8A8B8;
-  --color-chief-white: #F4F0E8;
-  --color-chief-surface: #13131F;
+  --color-chief-black: #FAFAF8;
+  --color-chief-deep: #F2EFEA;
+  --color-chief-gold: #9B7840;
+  --color-chief-gold-light: #C9A96E;
+  --color-chief-mist: #6B6879;
+  --color-chief-white: #1A1820;
+  --color-chief-surface: #EDE9E2;
 }
 
 * {
@@ -46,6 +46,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Generous spacing defaults for headings and paragraphs */
+h1, h2, h3, h4, h5, h6, p {
+  line-height: 1.6;
+}
+
 /* Grain overlay — rendered as a real DOM element in layout.tsx, not a pseudo-element,
    to avoid Safari stacking context bugs with position:fixed on body::after */
 .grain-overlay {
@@ -64,4 +69,4 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--chief-black); }
-::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.25); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(155, 120, 64, 0.35); border-radius: 2px; }

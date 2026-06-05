@@ -50,15 +50,15 @@ export default function Chiefs() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="chiefs" ref={ref} className="py-32 md:py-48 px-6">
+    <section id="chiefs" ref={ref} className="py-40 md:py-56 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-20">
+        <div className="mb-24">
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-[11px] tracking-[0.3em] uppercase text-[#C9A96E] mb-8 font-medium"
+            className="text-[11px] tracking-[0.3em] uppercase text-[#9B7840] mb-8 font-medium"
           >
             Meet the Chiefs
           </motion.p>
@@ -66,14 +66,14 @@ export default function Chiefs() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-[#F4F0E8] leading-[1.05]"
+            className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-[#1A1820] leading-[1.05]"
           >
             The Chiefs
           </motion.h2>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(201,169,110,0.08)]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(155,120,64,0.1)]">
           {chiefs.map((chief, i) => (
             <motion.div
               key={chief.role}
@@ -105,34 +105,34 @@ interface Chief {
 
 function AvailableCard({ chief }: { chief: Chief }) {
   return (
-    <div className="group relative bg-[#080810] p-8 md:p-10 h-full overflow-hidden cursor-default hover:bg-[#0D0D18] transition-colors duration-500">
+    <div className="group relative bg-[#FAFAF8] p-10 md:p-12 h-full overflow-hidden cursor-default hover:bg-[#F2EFEA] transition-colors duration-500">
       {/* Hover glow */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 50% 0%, rgba(201,169,110,0.08) 0%, transparent 70%)"
+          background: "radial-gradient(ellipse at 50% 0%, rgba(155,120,64,0.06) 0%, transparent 70%)"
         }}
       />
 
       {/* Top border accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-500" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#9B7840] to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
 
       {/* Role */}
-      <div className="flex items-start justify-between mb-6">
-        <span className="font-display text-4xl md:text-5xl font-light text-[#C9A96E] tracking-tight leading-none">
+      <div className="flex items-start justify-between mb-8">
+        <span className="font-display text-4xl md:text-5xl font-light text-[#9B7840] tracking-tight leading-none">
           {chief.role}
         </span>
-        <span className="text-[10px] tracking-[0.2em] uppercase text-[#080810] bg-[#C9A96E] px-2 py-1 font-medium">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-[#FAFAF8] bg-[#9B7840] px-2 py-1 font-medium">
           Available
         </span>
       </div>
 
       {/* Title */}
-      <h3 className="text-[13px] tracking-[0.06em] uppercase text-[#A8A8B8] font-light mb-5">
+      <h3 className="text-[13px] tracking-[0.06em] uppercase text-[#6B6879] font-light mb-5">
         {chief.title}
       </h3>
 
       {/* Description */}
-      <p className="text-[14px] text-[#7A7A8A] leading-relaxed font-light">
+      <p className="text-[14px] text-[#888898] leading-relaxed font-light">
         {chief.description}
       </p>
 
@@ -142,7 +142,7 @@ function AvailableCard({ chief }: { chief: Chief }) {
           href={chief.noteHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-6 text-[11px] tracking-[0.1em] text-[#C9A96E] opacity-50 hover:opacity-100 transition-opacity duration-300 underline underline-offset-2"
+          className="inline-block mt-6 text-[11px] tracking-[0.1em] text-[#9B7840] opacity-50 hover:opacity-100 transition-opacity duration-300 underline underline-offset-2"
         >
           {chief.note} ↗
         </a>
@@ -153,24 +153,24 @@ function AvailableCard({ chief }: { chief: Chief }) {
 
 function ComingSoonCard({ chief }: { chief: Chief }) {
   return (
-    <div className="relative bg-[#080810] p-8 md:p-10 h-full opacity-40">
+    <div className="relative bg-[#FAFAF8] p-10 md:p-12 h-full opacity-40">
       {/* Role */}
-      <div className="flex items-start justify-between mb-6">
-        <span className="font-display text-4xl md:text-5xl font-light text-[#A8A8B8] tracking-tight leading-none">
+      <div className="flex items-start justify-between mb-8">
+        <span className="font-display text-4xl md:text-5xl font-light text-[#6B6879] tracking-tight leading-none">
           {chief.role}
         </span>
-        <span className="text-[10px] tracking-[0.2em] uppercase text-[#A8A8B8] border border-[rgba(168,168,184,0.3)] px-2 py-1 font-light">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-[#6B6879] border border-[rgba(107,104,121,0.3)] px-2 py-1 font-light">
           Soon
         </span>
       </div>
 
       {/* Title */}
-      <h3 className="text-[13px] tracking-[0.06em] uppercase text-[#6A6A7A] font-light mb-5">
+      <h3 className="text-[13px] tracking-[0.06em] uppercase text-[#9898B0] font-light mb-5">
         {chief.title}
       </h3>
 
       {/* Description */}
-      <p className="text-[14px] text-[#5A5A6A] leading-relaxed font-light">
+      <p className="text-[14px] text-[#9898B0] leading-relaxed font-light">
         {chief.description}
       </p>
     </div>
