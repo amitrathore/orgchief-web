@@ -1,28 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 @import "tailwindcss";
 
+/* ─── Dark theme (default) ────────────────────────────────── */
 :root {
-  --chief-black: #080810;
-  --chief-deep: #0F0F1A;
-  --chief-gold: #C9A96E;
-  --chief-gold-light: #E8C98A;
-  --chief-mist: #A8A8B8;
-  --chief-white: #F4F0E8;
-  --chief-surface: #13131F;
-  --chief-border: rgba(201, 169, 110, 0.15);
+  --bg-base:        #080810;
+  --bg-raised:      #0F0F1A;
+  --bg-surface:     #13131F;
+  --bg-card:        #080810;
+  --bg-card-hover:  #0D0D18;
+
+  --fg-primary:     #F4F0E8;
+  --fg-secondary:   #A8A8B8;
+  --fg-muted:       #6A6A7A;
+  --fg-faint:       #4A4A5A;
+  --fg-faintest:    #3A3A4A;
+
+  --gold:           #C9A96E;
+  --gold-bright:    #E8C98A;
+  --gold-on:        #080810;   /* text colour on gold backgrounds */
+
+  --border-faint:   rgba(201,169,110,0.08);
+  --border-subtle:  rgba(201,169,110,0.10);
+  --border-mid:     rgba(201,169,110,0.15);
+  --border-strong:  rgba(201,169,110,0.25);
+  --border-hover:   rgba(201,169,110,0.40);
+
+  --grid-sep:       rgba(201,169,110,0.08);
+  --glow-hero:      rgba(201,169,110,0.07);
+  --glow-section:   rgba(201,169,110,0.06);
+  --glow-card:      rgba(201,169,110,0.08);
+  --glow-top:       rgba(201,169,110,0.04);
+
+  /* Nav scrolled background — needs opacity, defined as separate class */
+  --nav-bg:         rgba(8,8,16,0.92);
+
+  --scrollbar-thumb: rgba(201,169,110,0.25);
 }
 
-@theme inline {
-  --color-chief-black: #080810;
-  --color-chief-deep: #0F0F1A;
-  --color-chief-gold: #C9A96E;
-  --color-chief-gold-light: #E8C98A;
-  --color-chief-mist: #A8A8B8;
-  --color-chief-white: #F4F0E8;
-  --color-chief-surface: #13131F;
+/* ─── Light theme ─────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-base:        #F7F2E9;
+  --bg-raised:      #EDE7D8;
+  --bg-surface:     #E5DFCE;
+  --bg-card:        #F7F2E9;
+  --bg-card-hover:  #EFE9DC;
+
+  --fg-primary:     #1C1A14;
+  --fg-secondary:   #6B6358;
+  --fg-muted:       #8A7D6E;
+  --fg-faint:       #A89880;
+  --fg-faintest:    #C0B09A;
+
+  --gold:           #9A6E30;
+  --gold-bright:    #B8843A;
+  --gold-on:        #F7F2E9;
+
+  --border-faint:   rgba(100,70,20,0.08);
+  --border-subtle:  rgba(100,70,20,0.12);
+  --border-mid:     rgba(100,70,20,0.18);
+  --border-strong:  rgba(100,70,20,0.28);
+  --border-hover:   rgba(100,70,20,0.45);
+
+  --grid-sep:       rgba(100,70,20,0.08);
+  --glow-hero:      rgba(154,110,48,0.05);
+  --glow-section:   rgba(154,110,48,0.04);
+  --glow-card:      rgba(154,110,48,0.06);
+  --glow-top:       rgba(154,110,48,0.03);
+
+  --nav-bg:         rgba(247,242,233,0.93);
+
+  --scrollbar-thumb: rgba(100,70,20,0.2);
 }
 
-* {
+/* ─── Reset & base ────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -38,16 +89,20 @@ html {
 body {
   width: 100%;
   max-width: 100%;
-  background-color: var(--chief-black);
-  color: var(--chief-white);
+  background-color: var(--bg-base);
+  color: var(--fg-primary);
   font-family: 'DM Sans', system-ui, sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Grain overlay — rendered as a real DOM element in layout.tsx, not a pseudo-element,
-   to avoid Safari stacking context bugs with position:fixed on body::after */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Grain overlay (rendered as real DOM element in layout.tsx) */
 .grain-overlay {
   position: fixed;
   inset: 0;
@@ -57,11 +112,7 @@ body {
   z-index: 9999;
 }
 
-.font-display {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--chief-black); }
-::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.25); border-radius: 2px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 2px; }
