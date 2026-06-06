@@ -26,7 +26,7 @@ export default function What() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="what" ref={ref} className="relative py-32 md:py-48 px-6 overflow-hidden">
+    <section id="what" ref={ref} className="relative py-32 md:py-48 px-6">
       <div className="max-w-7xl mx-auto mb-20">
         <div className="h-px" style={{ background: "linear-gradient(to right, transparent, var(--border-mid), transparent)" }} />
       </div>

@@ -13,15 +13,17 @@ const fadeUp: Variants = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
-      {/* Ambient background glow */}
-      <div className="absolute inset-0 pointer-events-none">
+    <section className="relative min-h-screen">
+      {/* Overflow is clipped here, not on the flex container, to avoid Safari shrink-wrap */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
           style={{ background: "radial-gradient(ellipse at center, var(--glow-hero) 0%, transparent 70%)" }} />
         <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] rounded-full"
           style={{ background: "radial-gradient(ellipse at center, var(--glow-top) 0%, transparent 70%)" }} />
       </div>
 
+      {/* Inner flex wrapper for vertical centering — section stays a plain block */}
+      <div className="relative flex items-center justify-center min-h-screen px-6">
       <div className="relative max-w-4xl mx-auto text-center z-10">
         {/* Sigil */}
         <motion.div
@@ -88,6 +90,7 @@ export default function Hero() {
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <div className="w-px h-12" style={{ background: `linear-gradient(to bottom, var(--gold), transparent)` }} />
         </motion.div>
+      </div>
       </div>
     </section>
   );

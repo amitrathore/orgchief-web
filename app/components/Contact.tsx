@@ -8,12 +8,14 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="contact" ref={ref} className="relative py-32 md:py-48 px-6 overflow-hidden"
+    <section id="contact" ref={ref} className="relative py-32 md:py-48 px-6"
       style={{ backgroundColor: "var(--bg-raised)" }}>
-      <div className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: "linear-gradient(to right, transparent, var(--border-mid), transparent)" }} />
-      <div className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 80%, var(--glow-section) 0%, transparent 60%)" }} />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 right-0 h-px"
+          style={{ background: "linear-gradient(to right, transparent, var(--border-mid), transparent)" }} />
+        <div className="absolute inset-0"
+          style={{ background: "radial-gradient(ellipse at 50% 80%, var(--glow-section) 0%, transparent 60%)" }} />
+      </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
         <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.8 }}

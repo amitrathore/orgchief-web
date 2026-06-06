@@ -98,6 +98,19 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* Safari/Edge: block-level structural elements must be explicitly full width.
+   flex/grid containers shrink-wrap in these browsers without it. */
+main, section, header, footer, nav {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* Sections with overflow:hidden must keep their full width in Safari */
+section {
+  min-width: 0;
+}
+
 .font-display {
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
