@@ -84,6 +84,7 @@ export default function Chiefs() {
               transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="relative rounded-2xl flex flex-col"
               style={{ padding: "1.75rem 2rem",
+                height: "100%",
                 backgroundColor: "var(--bg-card)",
                 border: "1px solid var(--border)",
                 boxShadow: "var(--shadow-sm)",
@@ -109,7 +110,7 @@ export default function Chiefs() {
                 {chief.desc}
               </p>
 
-              <ul className="flex flex-col gap-2 mt-auto">
+              <ul className="flex flex-col gap-2" style={{ marginTop: "1.5rem" }}>
                 {chief.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-2)" }}>
                     <span style={{ color: chief.available ? "var(--accent)" : "var(--text-4)", marginTop: "2px", flexShrink: 0 }}>✓</span>
@@ -120,8 +121,8 @@ export default function Chiefs() {
 
               {chief.note && chief.noteHref && (
                 <a href={chief.noteHref} target="_blank" rel="noopener noreferrer"
-                  className="mt-4 text-xs transition-colors duration-200"
-                  style={{ color: "var(--text-3)" }}
+                  className="text-xs transition-colors duration-200"
+                  style={{ marginTop: "1rem", display: "block", color: "var(--text-3)" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
                   onMouseLeave={e => (e.currentTarget.style.color = "var(--text-3)")}>
                   {chief.note} ↗
@@ -129,8 +130,9 @@ export default function Chiefs() {
               )}
 
               {chief.available && (
-                <a href="#contact" className="mt-6 inline-flex items-center justify-center gap-2 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
-                  style={{ backgroundColor: "var(--accent-tint)", color: "var(--accent)" }}
+                <a href="#contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium transition-all duration-200"
+                  style={{ marginTop: "auto", paddingTop: "0.625rem", paddingBottom: "0.625rem", backgroundColor: "var(--accent-tint)", color: "var(--accent)" }}
                   onMouseEnter={e => {
                     (e.currentTarget as HTMLElement).style.backgroundColor = "var(--accent)";
                     (e.currentTarget as HTMLElement).style.color = "var(--accent-text)";
