@@ -44,8 +44,8 @@ export default function HowItWorks() {
             <motion.div key={step.number}
               initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="p-6 rounded-2xl"
-              style={{ backgroundColor: "var(--bg-alt)", border: "1px solid var(--border)" }}>
+              className="rounded-2xl"
+              style={{ padding: "1.75rem", backgroundColor: "var(--bg-alt)", border: "1px solid var(--border)" }}>
               <span className="block text-xs font-bold mb-4 tabular-nums"
                 style={{ color: "var(--accent)", opacity: 0.7 }}>
                 {step.number}

@@ -82,8 +82,8 @@ export default function Chiefs() {
             <motion.div key={chief.role}
               initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="relative p-7 rounded-2xl flex flex-col"
-              style={{
+              className="relative rounded-2xl flex flex-col"
+              style={{ padding: "1.75rem 2rem",
                 backgroundColor: "var(--bg-card)",
                 border: "1px solid var(--border)",
                 boxShadow: "var(--shadow-sm)",

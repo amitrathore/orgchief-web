@@ -54,8 +54,8 @@ export default function What() {
             <motion.div key={p.title}
               initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="p-8 rounded-2xl"
-              style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border)", boxShadow: "var(--shadow-sm)" }}>
+              className="rounded-2xl"
+              style={{ padding: "2rem", backgroundColor: "var(--bg-card)", border: "1px solid var(--border)", boxShadow: "var(--shadow-sm)" }}>
               <span className="text-3xl mb-5 block">{p.icon}</span>
               <h3 className="font-display text-xl mb-3" style={{ fontWeight: 700, color: "var(--text)" }}>
                 {p.title}
