@@ -76,9 +76,6 @@ export default function Footer() {
               DatacentrIQ
             </a>
           </span>
-          <span className="text-xs uppercase tracking-widest" style={{ color: "var(--text-4)" }}>
-            Orgminding
-          </span>
         </div>
 
       </motion.div>
